@@ -14,6 +14,7 @@ void swap(int &a, int &b)
     a = b;
     b = temp;
 }
+// take two pointer l and r--> before l(left) all eleemnt are sorted i.e (0)  and after r(right) all ele are sorted i.e. (2) and traverse via i=0 while i<r
 void sortColors(vector<int> &nums)
 {
     int n = nums.size();
