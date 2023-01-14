@@ -67,7 +67,7 @@ int getPairsCount2(int arr[], int n, int k) // TC-->O(n)  & SC--> O(n)  -->More 
     int i = 0, j = n - 1;
     int ans = 0;
     unordered_map<int, int> p;
-    for (int i = 0; i <= j; i++)
+    p.clear() for (int i = 0; i <= j; i++)
     {
         p[arr[i]]++;
     }
