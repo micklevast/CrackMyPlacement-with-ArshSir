@@ -11,28 +11,63 @@ using namespace std;
 class Solution
 {
 public:
-    int maxArea(vector<int> &height)
-    { // O(n)
-        int left = 0;
-        int right = height.size() - 1;
-        int maxi = 0;
-        while (left < right)
+    int maxArea(vector<int> &hgt)
+    {
+        int ans = INT_MIN;
+        int n = hgt.size();
+        for (int i = 0; i < n; i++)
         {
-            int w = right - left;
-            int h = min(height[left], height[right]);
-            int area = h * w;
-            maxi = max(maxi, area);
-            if (height[left] < height[right])
-                left++;
-            else if (height[left] > height[right])
-                right--;
+            int la = 0;
+            int ra = 0;
+            int li = i - 1;
+            int ri = i + 1;
+            int area = 0;
+            while (ri < n)
+            {
+                area = max(area, ((ri - i) * min(hgt[i], hgt[ri])));
+                ri++;
+            }
+            while (li >= 0)
+            {
+                area = max(area, ((i - li) * min(hgt[i], hgt[li])));
+                li--;
+            }
+            ans = max(ans, area);
+        }
+        return ans;
+    }
+    int min(int a, int b)
+    {
+        return a > b ? b : a;
+    }
+    int max(int a, int b)
+    {
+        return a > b ? a : b;
+    }
+    int maxArea1(vector<int> &hgt)
+    {
+        int ans = INT_MIN;
+        int n = hgt.size() - 1;
+        int i = 0;
+        while (i < n)
+        {
+            ans = max(ans, ((n - i) * min(hgt[n], hgt[i])));
+            //    cout<<"i:"<<i<<" n:"<<n<<"  ans:"<<ans<<endl;
+            if (hgt[i] < hgt[n])
+            {
+                i++;
+            }
+            else if (hgt[i] > hgt[n])
+            {
+                n--;
+            }
             else
             {
-                left++;
-                right--;
+                i++;
+                n--;
             }
         }
-        return maxi;
+        return ans;
     }
 };
 int main()

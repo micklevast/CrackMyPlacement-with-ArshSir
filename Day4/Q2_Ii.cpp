@@ -1,8 +1,6 @@
 #include <iostream>
-#include <vector>
 #include <algorithm>
-
-#define ll long long int
+#include <vector>
 using namespace std;
 vector<vector<int>> threeSum(vector<int> &nums)
 {
@@ -36,7 +34,7 @@ vector<vector<int>> threeSum(vector<int> &nums)
                     }
                     while (l < r && nums[r] == last_high_occurence)
                     {
-                        r-- --;
+                        r--;
                     }
                 }
                 else if (sum > 0)
@@ -52,14 +50,15 @@ vector<vector<int>> threeSum(vector<int> &nums)
         return ans;
     }
 }
-
 int main()
 {
-    vector<int> ans;
-    vector<int> nums{-1, 0, 1, 2, -1, -4};
-
-    ans = threeSum(nums);
-    cout << endl;
+    vector<int> arr{-5, -2, -6, 5, 2, 1, 2, 3, 4};
+    vector<vector<int>> ans = threeSum(arr);
     for (auto val : ans)
-        cout << val << " ";
+    {
+        for (auto v : val)
+            cout << v << " ";
+
+        cout << endl;
+    }
 }

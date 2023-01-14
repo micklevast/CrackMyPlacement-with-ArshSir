@@ -39,5 +39,8 @@ public:
 int main()
 {
     Solution s;
-    s.subarraySum({45, 23, 6, 98, 61, 6}, 5);
+    vector<int> arr{1, 2, 3};
+    int k = 3;
+    int ans = s.subarraySum(arr, k);
+    cout << ans << endl;
 }
