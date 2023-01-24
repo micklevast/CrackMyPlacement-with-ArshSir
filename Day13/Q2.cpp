@@ -3,7 +3,7 @@
 #include <string>
 #include <unordered_map>
 #include <set>
-#include <math.h>
+#include <cmath>
 #include <algorithm>
 #include <map>
 #define ll long long int
