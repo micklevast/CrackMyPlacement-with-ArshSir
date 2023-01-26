@@ -21,7 +21,7 @@ struct ListNode
 class Solution
 {
 public:
-    ListNode *removeZeroSumSublists(ListNode *head)
+        ListNode *removeZeroSumSublists(ListNode *head)
     {
         ListNode *dummy = new ListNode(0);
         dummy->next = head;
